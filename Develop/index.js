@@ -7,7 +7,7 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'Project Title:'
+        message: 'Project Name:'
     },
     {
         type: 'input',
@@ -28,7 +28,7 @@ const questions = [
         type: 'list',
         name: 'License',
         message: 'Choose a license:',
-        choices: ['Apache', 'Boost', 'MIT', 'Mozilla']
+        choices: ['Apache', 'Boost', 'MIT']
     },
     {
         input: 'input',
@@ -59,7 +59,7 @@ function init() {
         } else {
             console.log('Please Provide Answer!!')
         }
-        
+
     })
 }
 
