@@ -1,9 +1,9 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 
-const generateInfo = {
+const generateAllInfo = {
   renderLicenseBadge: function (license) {
-    let agreement = '';
+    let agreement = "";
     if (license === 'Apache') {
       agreement = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     } else if (license === 'Boost') {
@@ -11,47 +11,52 @@ const generateInfo = {
     } else if (license === 'MIT') {
       agreement = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     } else if (license === 'None') {
-      agreement = '';
+      agreement = "";
     }
-    return badge;
-  }
+    return agreement;
+  },
   
-}
+  
+  // TODO: Create a function that returns the license link
+  // If there is no license, return an empty string
+  // function renderLicenseLink(license) {}
+  
+  // TODO: Create a function that returns the license section of README
+  // If there is no license, return an empty string
+  // function renderLicenseSection(license) {}
+  
+  // TODO: Create a function to generate markdown for README
+  generateMarkdown: function(data) {
+    return `# ${data.title}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-  ##Description
-  ${data.Description}
-
-  ##Table of Contents
-    -Use(#Use)
-    -Contributions(#Contributions)
-    -License(#License)
-    -GitHub(#GitHub)
-    -Contact(#Contact)
-
-  ##Use
+    # Description
+    ${data.Description}
+    
+  # Table of Contents
+  -Use(#Use)
+  -Contributions(#Contributions)
+  -License(#License)
+  -GitHub(#GitHub)
+  -Contact(#Contact)
+    
+  # Use
     ${data.use}
-  ##Contributions
+    
+  # Contributions
     ${data.Contributions}
-  ##License
+    
+  # License
     ${data.License}
     ${this.renderLicenseBadge(data.license)}
-  ##GitHub
+    
+  # GitHub
     ${data.GitHub}
-  ##Contact
+    
+  # Contact
     ${data.contact}
-
-`;
-}
-
-module.exports = generateMarkdown;
+    
+    `;
+  },
+};
+  
+  module.exports = generateAllInfo;
