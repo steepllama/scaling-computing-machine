@@ -32,7 +32,7 @@ const questions = [
     },
     {
         input: 'input',
-        name: 'GitHub UserName',
+        name: 'GitHub',
         message: 'GitHub Username:',
     },
     {

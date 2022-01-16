@@ -3,15 +3,15 @@
 
 const generateInfo = {
   renderLicenseBadge: function (license) {
-    let license = '';
+    let agreement = '';
     if (license === 'Apache') {
-      license = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+      agreement = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     } else if (license === 'Boost') {
-      license = '[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
+      agreement = '[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
     } else if (license === 'MIT') {
-      license = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+      agreement = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     } else if (license === 'None') {
-      license = '';
+      agreement = '';
     }
     return badge;
   }
@@ -29,6 +29,27 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  ##Description
+  ${data.Description}
+
+  ##Table of Contents
+    -Use(#Use)
+    -Contributions(#Contributions)
+    -License(#License)
+    -GitHub(#GitHub)
+    -Contact(#Contact)
+
+  ##Use
+    ${data.use}
+  ##Contributions
+    ${data.Contributions}
+  ##License
+    ${data.License}
+    ${this.renderLicenseBadge(data.license)}
+  ##GitHub
+    ${data.GitHub}
+  ##Contact
+    ${data.contact}
 
 `;
 }
